@@ -5,6 +5,8 @@ public class Produto {
 	public String nome;
 	public Double preco;
 	
+	StringBuilder sb = new StringBuilder();
+	
 	public String getNome() {
 		return nome;
 	}
@@ -31,7 +33,14 @@ public class Produto {
 	}
 	
 	public String etiqueta() {
+		sb.append(nome).append("R$ ").append(String.format("%.2f", this.preco)).append("\n");
+			
+		return sb.toString();
 		
-	}
+		}
+		
+		public String toString() {
+			return etiqueta();
+		}
 	
 }
