@@ -15,10 +15,17 @@ public class Juridico extends Contribuinte{
 	public Juridico(String nome, Double rendimentoAnual, Integer numeroEmpregados) {
 		super(nome, rendimentoAnual);
 		this.numeroEmpregados = numeroEmpregados;
-		this.imposto = impostojuridico(rendimentoAnual, numeroEmpregados);
 	}
+
 	
 	public Juridico() {
 		
 	}
+
+	@Override
+	public Double imposto() {
+		if(numeroEmpregados > 10) return (rendimentoAnual * 14 / 100);
+		else return (rendimentoAnual * 16 / 100);
+	}
+	
 }

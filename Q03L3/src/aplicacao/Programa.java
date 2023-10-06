@@ -7,7 +7,7 @@ public class Programa {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		ArrayList<Contribuinte> MPTMD = new ArrayList<>();
+		ArrayList<Contribuinte> lista = new ArrayList<>();
 		
 		System.out.println("Digite o número de Contribuintes: ");
 		int numeroContribuintes = input.nextInt();
@@ -28,11 +28,11 @@ public class Programa {
 			switch(tipoPessoa) {
 				case 'f': System.out.println("Despesas com saúde: ");
 						  Double saude = input.nextDouble();
-						  MPTMD.add(new Fisico(nome, rendaAnual, saude));
+						  lista.add(new Fisico(nome, rendaAnual, saude));
 						  break;
 				case 'j': System.out.println("Número de Empregados: ");
 				  		  int empregados = input.nextInt();
-				  		  MPTMD.add(new Juridico(nome, rendaAnual, empregados));
+				  		  lista.add(new Juridico(nome, rendaAnual, empregados));
 			}
 		}
 		input.close();
@@ -40,8 +40,8 @@ public class Programa {
 		
 		System.out.println("\nIMPOSTOS PAGOS:");
 		
-		for(Contribuinte certinho: MPTMD) {
-			impostoTotal += certinho.getImposto();
+		for(Contribuinte certinho: lista) {
+			impostoTotal += certinho.imposto();
 			System.out.println(certinho);			
 		}
 		
