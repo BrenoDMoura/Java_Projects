@@ -35,6 +35,6 @@ public class Programa {
 		input.close();
 		
 		System.out.println(resposta);
-}
+}//Fim da public Class
 	
-}
+}//Fim da main
